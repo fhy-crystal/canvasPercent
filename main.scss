@@ -1,0 +1,12 @@
+$paddingLR: 20px;
+$fontSize: 16px;
+$direction: left;
+.item {
+	float: $direction;
+	padding: 0 $paddingLR 0;
+	list-style-type: none;
+	text-align: center;
+}
+.h2{
+	font-size: $fontSize;
+}
