@@ -1,12 +1,14 @@
 {
   "devDependencies": {
     "gulp-asset-rev": "0.0.15",
+    "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-rev": "^7.1.2",
     "gulp-rev-collector": "^1.1.1",
     "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
     "node-sass": "^4.5.0"
   }
 }
