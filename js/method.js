@@ -117,17 +117,24 @@
 			function drawFrame() {
 				// 兼容
 				window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-				requestAnimationFrame(drawFrame);
-				context.clearRect(0, 0, $canvas.width, $canvas.height);
-				// 画圈
-				percentCircle(speed);
-				// 写字
-				text(speed);
-
 				if (speed < per) {
+					// 没有requestAnimationFrame时使用setInterval回退兼容
+					if (window.requestAnimationFrame) {
+						requestAnimationFrame(drawFrame);
+					} else {
+						setInterval(drawFrame, 100);
+					}
 					speed += 0.01;
+				} else {
+					clearInterval(drawFrame);
 				}
+				
+				context.clearRect(0, 0, $canvas.width, $canvas.height);
+				percentCircle(speed);// 画圈
+				text(speed);// 写字
 			}
+
+
 
 			// 调用函数
 			backCircle();
